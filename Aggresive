@@ -1,0 +1,15 @@
+#!/bin/bash
+sudo pmset -b sleep 0; sudo pmset -b disablesleep 1
+mkdir /Library/Addigy/MONUS
+unzip "/Library/Addigy/ansible/packages/MONUS-Aggressive (Lid check=no, Battery > 30) (1.4.3)/MONUS1.4.3(aggressive).zip" -d  /Library/Addigy/MONUS
+#mv "/Library/Addigy/ansible/packages/Dubai test-cp (1.3)/monus1.3.tar.gz" /Library/Addigy/MONUS/monus1.3.tar.gz
+#cd /Library/Addigy/MONUS
+#tar xzf monus1.3.tar.gz
+chmod 777 /Library/Addigy/MONUS/MONUS1.4.3.app
+cp /Library/Addigy/MONUS/com.monus.schedule.plist /Library/LaunchDaemons/com.monus.schedule.plist
+launchctl load /Library/LaunchDaemons/com.monus.schedule.plist
+
+
+
+#xattr -d com.apple.quarantine /Library/Addigy/MONUS/MONUS1.4.app
+#xattr -d com.apple.quarantine /Library/Addigy/MONUS/monus1.3/MONUSdownload.app
